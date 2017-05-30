@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Edge.playground">
+   </FileRef>
+   <FileRef
+      location = "container:Edge.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../reach/Reach.xcodeproj">
+   </FileRef>
+</Workspace>

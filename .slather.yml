@@ -1,0 +1,10 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+workspace: Edge.xcworkspace
+xcodeproj: Edge.xcodeproj
+scheme: Edge
+configuration: Test
+output_directory: coverage
+ignore:
+  - ../**/*/Xcode*

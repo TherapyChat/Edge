@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+excluded="Tests\|Edge.playground"
+
+count(){
+
+  total=0
+
+  for file in `find . -mindepth 1 \( -iname \*.swift \) | grep -v "$excluded"`; do
+
+    lines=`cat $file | sed '/\/\//d' | sed '/^\s*$/d' | wc -l`
+
+    total=$(($total + $lines))
+    echo "  " $lines $file
+  done
+  echo "  " $total in total
+}
+
+count

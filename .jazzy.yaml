@@ -1,0 +1,17 @@
+module: Edge
+author: Sergio Fernández
+author_url: https://therapychat.com
+github_url: https://github.com/therapychat/Edge
+dash_url: https://therapychat.github.io/Edge/Edge.xml
+
+theme: fullwidth
+clean: true
+
+readme: README.md
+
+disable_search: true
+skip_undocumented: false
+hide_documentation_coverage: false
+
+copyright: '© 2017 [TherapyChat](https://therapychat.com) under [open source license](https://github.com/therapychat/Edge/blob/master/LICENSE).'
+swift_version: '3.1'
