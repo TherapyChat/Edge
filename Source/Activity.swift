@@ -16,7 +16,7 @@ public final class Activity {
     /// Counter for executing requests and handle network activity indicator.
     var inProgress: Int {
         didSet {
-            #if os(iOS)
+            #if os(iOS) && APPLICATION_EXTENSION_API_ONLY
                 UIApplication.shared.isNetworkActivityIndicatorVisible = inProgress > 0
             #endif
         }

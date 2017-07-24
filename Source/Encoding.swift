@@ -28,7 +28,7 @@ public struct JSONEncoding: Encoding {
         if !parameters.isEmpty {
             encodedRequest.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         }
-        encodedRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        encodedRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
 
         return encodedRequest
     }
@@ -55,12 +55,13 @@ public struct URLEncoding: Encoding {
             URLQueryItem(name: String($0), value: String(describing: $1))
         }
 
-        guard let finalURL = components.url else {
-            fatalError("Unable to retrieve final URL")
+        switch request.method {
+        case .get:
+            encodedRequest.url = components.url
+        default:
+            encodedRequest.httpBody = components.query?.data(using: .utf8, allowLossyConversion: false)
+            encodedRequest.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type") // swiftlint:disable:this line_length
         }
-
-        encodedRequest.url = finalURL
-        encodedRequest.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
 
         return encodedRequest
     }

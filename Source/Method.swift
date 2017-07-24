@@ -34,9 +34,30 @@ public enum HTTPMethod {
 extension HTTPMethod: RawRepresentable {
     public typealias RawValue = String
 
-    /// unnused
+    /// Transform String to HTTP Method
     public init?(rawValue: RawValue) {
-        return nil
+        switch rawValue {
+        case HTTPMethod.get.rawValue:
+            self = .get
+        case HTTPMethod.head.rawValue:
+            self = .head
+        case HTTPMethod.post.rawValue:
+            self = .post
+        case HTTPMethod.put.rawValue:
+            self = .put
+        case HTTPMethod.delete.rawValue:
+            self = .delete
+        case HTTPMethod.connect.rawValue:
+            self = .connect
+        case HTTPMethod.options.rawValue:
+            self = .options
+        case HTTPMethod.trace.rawValue:
+            self = .trace
+        case HTTPMethod.patch.rawValue:
+            self = .patch
+        default:
+            return nil
+        }
     }
 
     /// Transform to HTTP verb string
@@ -54,4 +75,11 @@ extension HTTPMethod: RawRepresentable {
         }
     }
     
+}
+
+extension URLRequest {
+
+    var method: HTTPMethod {
+        return HTTPMethod(rawValue: httpMethod ?? "GET") ?? .get
+    }
 }

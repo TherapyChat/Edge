@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name     = 'Edge'
-  spec.version  = '1.0.0'
+  spec.version  = '1.1.0'
   spec.summary  = 'A modern HTTP network library. Built on top of URLSession.'
   spec.homepage = 'https://github.com/therapychat/Edge'
   spec.license  = { type: 'Apache License, Version 2.0', file: 'LICENSE' }

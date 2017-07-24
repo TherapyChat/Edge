@@ -1,5 +1,8 @@
 # Edge CHANGELOG
 
+## 1.1.0
+Fix URL Encoding parameter for POST HTTP method.
+
 ## 1.0.0
 
 Initial release.

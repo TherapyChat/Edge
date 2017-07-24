@@ -8,7 +8,6 @@
 
 import XCTest
 import Nimble
-import Reach
 
 @testable import Edge
 
@@ -17,8 +16,7 @@ final class EdgeTests: XCTestCase {
     private lazy var sut: Edge = {
         let queueMock = Queue()
         let sessionMock = Session(with: MockTask.endpoint, session: URLSessionMock)
-        let reachMock = Reach()
-        return Edge(with: sessionMock, queue: queueMock, reach: reachMock)
+        return Edge(with: sessionMock, queue: queueMock)
     }()
 
     override func tearDown() {
@@ -176,9 +174,8 @@ final class EdgeTests: XCTestCase {
 
         let queueMock = Queue()
         let sessionMock = Session(with: MockTask.endpoint)
-        let reachMock = Reach()
 
-        let sut = Edge(with: sessionMock, queue: queueMock, reach: reachMock)
+        let sut = Edge(with: sessionMock, queue: queueMock)
 
         sut.stop()
         expect(queueMock.isStopped).to(beTruthy())
