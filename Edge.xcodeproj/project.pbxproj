@@ -10,6 +10,7 @@
 		E702A3D01E312AF000040E18 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702A3CF1E312AF000040E18 /* MockTask.swift */; };
 		E72DBE461E2677B800DFDA3C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBE451E2677B800DFDA3C /* Error.swift */; };
 		E72DC8811ED5E1CD00607181 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DC8801ED5E1CD00607181 /* Activity.swift */; };
+		E7488A9D1F27870100AE18AE /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7488A9C1F27870100AE18AE /* Application.swift */; };
 		E74F5CE71ED4908700B35FF9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F5CE51ED4901700B35FF9 /* Result.swift */; };
 		E7511DB21E27C68D00E6E2D3 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7511DB11E27C68D00E6E2D3 /* Interceptor.swift */; };
 		E7516DDB1E24D0D200848E19 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516DDA1E24D0D200848E19 /* Queue.swift */; };
@@ -19,12 +20,10 @@
 		E77DC9451E9CF0140090AF8A /* ErrorTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77DC9441E9CF0140090AF8A /* ErrorTask.swift */; };
 		E78024C01E312F4600CE75DC /* Session+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78024BF1E312F4600CE75DC /* Session+Mock.swift */; };
 		E7952F281E2401DC0005C1AD /* Edge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C898111E1A773F00747C4F /* Edge.framework */; };
-		E7952F301E2401E60005C1AD /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7952F191E2401460005C1AD /* Nimble.framework */; };
-		E7952F331E2401F90005C1AD /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E7952F191E2401460005C1AD /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7952F351E2402090005C1AD /* EdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74098501E23FD230073A728 /* EdgeTests.swift */; };
 		E7A243F61E28E70400EA1A3A /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A243F51E28E70400EA1A3A /* Encoding.swift */; };
+		E7A843D02046CDCE00513A33 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E7F30F582046CBB5003FCEFF /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7AD39291E27A3DF009A5428 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD39281E27A3DF009A5428 /* Authorization.swift */; };
-		E7B9BAAF1ED31ED1007A4F53 /* Reach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B9BAAE1ED31ED1007A4F53 /* Reach.framework */; };
 		E7C898221E1A773F00747C4F /* Edge.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C898141E1A773F00747C4F /* Edge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7C8982C1E1A77D900747C4F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8982B1E1A77D900747C4F /* Edge.swift */; };
 		E7DF2C8A1E24F37900C36CC0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF2C891E24F37900C36CC0 /* Session.swift */; };
@@ -50,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7952F331E2401F90005C1AD /* Nimble.framework in Copy Frameworks */,
+				E7A843D02046CDCE00513A33 /* Nimble.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +61,7 @@
 		E72DBE451E2677B800DFDA3C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		E72DC8801ED5E1CD00607181 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E74098501E23FD230073A728 /* EdgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTests.swift; sourceTree = "<group>"; };
+		E7488A9C1F27870100AE18AE /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		E74F5CE51ED4901700B35FF9 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E7511DB11E27C68D00E6E2D3 /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		E7516DDA1E24D0D200848E19 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -71,18 +71,15 @@
 		E755E6F91E1A9EBC005CC3FE /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		E755E6FA1E1A9EBC005CC3FE /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		E755E6FB1E1A9EBC005CC3FE /* Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
-		E76567391E55D434004F48D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		E76B254E1E23D89000E3C8C0 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E76B25501E23D8DA00E3C8C0 /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		E77DC9421E9CED370090AF8A /* Interceptor+Mock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Interceptor+Mock.swift"; sourceTree = "<group>"; };
 		E77DC9441E9CF0140090AF8A /* ErrorTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTask.swift; sourceTree = "<group>"; };
 		E78024BF1E312F4600CE75DC /* Session+Mock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+Mock.swift"; sourceTree = "<group>"; };
-		E7952F191E2401460005C1AD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E7952F231E2401DC0005C1AD /* EdgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7952F271E2401DC0005C1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7A243F51E28E70400EA1A3A /* Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		E7AD39281E27A3DF009A5428 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		E7B9BAAE1ED31ED1007A4F53 /* Reach.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reach.framework; path = ../reach/build/Debug/Reach.framework; sourceTree = "<group>"; };
 		E7C898111E1A773F00747C4F /* Edge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Edge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C898141E1A773F00747C4F /* Edge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
 		E7C898151E1A773F00747C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +88,7 @@
 		E7DF2C8B1E2502D300C36CC0 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E7DF2C8F1E25404800C36CC0 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		E7DF2C911E2548CA00C36CC0 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		E7F30F582046CBB5003FCEFF /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7952F281E2401DC0005C1AD /* Edge.framework in Frameworks */,
-				E7952F301E2401E60005C1AD /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B9BAAF1ED31ED1007A4F53 /* Reach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +144,7 @@
 		E76DB9461E1CF7FD00D7FA0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9BAAE1ED31ED1007A4F53 /* Reach.framework */,
-				E76567391E55D434004F48D7 /* Result.framework */,
-				E7952F191E2401460005C1AD /* Nimble.framework */,
+				E7F30F582046CBB5003FCEFF /* Nimble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +200,7 @@
 				E7A243F51E28E70400EA1A3A /* Encoding.swift */,
 				E74F5CE51ED4901700B35FF9 /* Result.swift */,
 				E72DC8801ED5E1CD00607181 /* Activity.swift */,
+				E7488A9C1F27870100AE18AE /* Application.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -352,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7488A9D1F27870100AE18AE /* Application.swift in Sources */,
 				E7DF2C901E25404800C36CC0 /* Response.swift in Sources */,
 				E74F5CE71ED4908700B35FF9 /* Result.swift in Sources */,
 				E72DC8811ED5E1CD00607181 /* Activity.swift in Sources */,
@@ -492,7 +488,7 @@
 				E7952F2F1E2401DC0005C1AD /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E7C8980B1E1A773F00747C4F /* Build configuration list for PBXProject "Edge" */ = {
 			isa = XCConfigurationList;
@@ -503,7 +499,7 @@
 				E755E7061E1A9EDD005CC3FE /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E7C898251E1A773F00747C4F /* Build configuration list for PBXNativeTarget "Edge" */ = {
 			isa = XCConfigurationList;
@@ -514,7 +510,7 @@
 				E755E7071E1A9EDD005CC3FE /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

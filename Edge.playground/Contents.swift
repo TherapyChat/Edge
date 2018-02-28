@@ -1,6 +1,6 @@
+import PlaygroundSupport
 import Foundation
 import Edge
-import PlaygroundSupport
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 /*:

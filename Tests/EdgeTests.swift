@@ -55,7 +55,7 @@ final class EdgeTests: XCTestCase {
                 case .success(let JSON):
                     if let headers = JSON["headers"] as? [String: Any],
                         let contentType = headers["Content-Type"] as? String {
-                        expect(contentType).to(equal("application/json"))
+                        expect(contentType).to(contain("application/json"))
                         reachedSuccessResponse = true
                     }
                 case .failure:
@@ -130,9 +130,9 @@ final class EdgeTests: XCTestCase {
                 case .success(let JSON):
                     if let headers = JSON["headers"] as? [String: Any],
                         let contentType = headers["Content-Type"] as? String {
-                        expect(contentType).to(equal("application/x-www-form-urlencoded; charset=utf-8"))
-                        reachedSuccessResponse = true
+                        expect(contentType).to(contain("application/x-www-form-urlencoded"))
                     }
+                    reachedSuccessResponse = true
                 case .failure:
                     reachedFailureResponse = false
                 }

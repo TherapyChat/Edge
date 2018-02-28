@@ -7,7 +7,4 @@
    <FileRef
       location = "container:Edge.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:../reach/Reach.xcodeproj">
-   </FileRef>
 </Workspace>

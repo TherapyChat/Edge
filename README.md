@@ -1,6 +1,12 @@
-# Edge
+<p align="center"><img width="300" src="./resources/logo.svg"></p>
 
-A modern HTTP network library. Built on top of `URLSession`. 
+![build](https://img.shields.io/travis/TherapyChat/Edge.svg)
+![swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS-333333.svg)
+![cocoapods](https://img.shields.io/cocoapods/v/Edge.svg)
+![carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)
+![coverage](https://img.shields.io/codecov/c/github/TherapyChat/Edge.svg)
+![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
 
 ## Table of Contents
 * [Overview](#overview)

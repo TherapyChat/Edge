@@ -76,13 +76,19 @@ public final class Edge {
     /// Run all requests enqueue
     public func start() {
         if queue.isStopped {
-            self.queue.start()
+            queue.start()
         }
     }
 
     /// Pause all requests enqueue
     public func stop() {
         queue.stop()
+    }
+
+    /// Reset all plugins and requests
+    public func reset() {
+        removePlugIns()
+        queue.flush()
     }
 
     // MARK: - Interceptors
@@ -169,7 +175,7 @@ public final class Edge {
 
     /// Executor request `Task` for all types of responses
     private func execute<T: Task>(_ task: T, completion: @escaping (TaskClosure)) {
-        let url = self.queue.prepare(request: self.session.request(with: task))
+        let url = queue.prepare(request: session.request(with: task))
         let request = Request(id: task.id, request: url, session: session, queue: queue, response: completion)
         queue.enqueue(request: request)
     }

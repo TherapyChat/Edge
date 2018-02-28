@@ -76,7 +76,9 @@ public final class Session {
 
      */
     func task(with request: URLRequest, completion: @escaping (HTTPResponse) -> Void) -> URLSessionDataTask {
-        return session.dataTask(with: request, completionHandler: completion)
+        return session.dataTask(with: request) { (data, response, error) in
+            completion((data: data, response: response, error: error))
+        }
     }
 }
 

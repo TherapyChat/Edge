@@ -18,29 +18,24 @@ public final class Queue {
 
     private(set) var isStopped = true
 
-    init() {
-        self.queue = [:]
-        self.interceptors = []
+    init(queue: [Identifier: Request] = [:],
+         interceptors: [Interceptor] = []) {
+        self.queue = queue
+        self.interceptors = interceptors
     }
 
     func start() {
         isStopped = false
-        queue.forEach { _, request in
-            request.execute()
-        }
+        queue.values.forEach { $0.execute() }
     }
 
     func stop() {
         isStopped = true
-        queue.forEach { _, request in
-            request.pause()
-        }
+        queue.values.forEach { $0.pause() }
     }
 
     func flush() {
-        queue.forEach { _, request in
-            request.stop()
-        }
+        queue.values.forEach { $0.stop() }
         queue = [:]
     }
 
@@ -62,7 +57,6 @@ public final class Queue {
             request.add(closure: response)
         } else {
             queue[request.id] = request
-
             execute(request)
         }
     }

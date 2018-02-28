@@ -1,5 +1,8 @@
 # Edge CHANGELOG
 
+## 1.2.0
+Safe UIApplication access from Application Extension
+
 ## 1.1.0
 Fix URL Encoding parameter for POST HTTP method.
 

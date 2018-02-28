@@ -42,18 +42,22 @@ extension Task {
 
 public extension Task {
 
+    /// Default HTTP GET Verb
     var method: HTTPMethod {
         return .get
     }
 
+    /// Default empty parameters
     var parameters: Parameters {
         return [:]
     }
 
+    /// Default empty headers
     var headers: Headers {
         return [:]
     }
 
+    /// Default JSON encoding
     var encoding: Encoding {
         return JSONEncoding.default
     }
