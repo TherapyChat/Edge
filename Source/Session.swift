@@ -44,7 +44,6 @@ public final class Session {
     convenience init(with url: URL) {
         let configuration = URLSessionConfiguration.default
         configuration.urlCache = URLCache(memoryCapacity: 10 * megaBytes, diskCapacity: 50 * megaBytes, diskPath: nil)
-        configuration.requestCachePolicy = .useProtocolCachePolicy
         configuration.httpAdditionalHeaders = Session.defaultHTTPHeaders
         let session = URLSession(configuration: configuration)
         self.init(with: url, session: session)

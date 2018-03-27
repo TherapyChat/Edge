@@ -40,6 +40,7 @@ public final class Request {
     func execute() {
         if case .running = state { return }
         task = session?.task(with: request) { response in
+            self.state = .finished
             self.queue?.process(request: self, response: response)
         }
         task?.resume()

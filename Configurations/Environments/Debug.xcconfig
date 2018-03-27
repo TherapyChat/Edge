@@ -44,6 +44,9 @@ SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
 // final installation location
 STRIP_INSTALLED_PRODUCT = NO
 
+// Swift compilation mode
+SWIFT_COMPILATION_MODE = singlefile
+
 // The optimization level (-Onone, -O, -Ofast) for the produced Swift binary
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 

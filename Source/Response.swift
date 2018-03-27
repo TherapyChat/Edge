@@ -12,10 +12,10 @@ typealias HTTPResponse = (data: Data?, response: URLResponse?, error: Error?)
 
 /// Responsible for handle `URLRequest` and `URLSessionDataTask` from `Task`.
 public struct Response {
-    let status: Status
-    let header: Headers
-    let data: Data?
-    let url: URL?
+    public let status: Status
+    public let header: Headers
+    public let data: Data?
+    public let url: URL?
 }
 
 extension Response {
@@ -33,11 +33,11 @@ extension Response {
         self.url = response.url
     }
 
-    var JSON: JSON {
+    public var JSON: JSON {
         return Parser.transformer(data) ?? [:]
     }
 
-    var plain: String {
+    public var plain: String {
         return Parser.transformer(data) ?? ""
     }
 }

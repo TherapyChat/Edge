@@ -14,19 +14,32 @@
 public final class Activity {
 
     /// Counter for executing requests and handle network activity indicator.
-    var inProgress: Int {
+    private var visible: Bool = false {
         didSet {
+            if visible {
+                activities += 1
+            } else {
+                activities -= 1
+            }
+
+            if activities < 0 {
+                activities = 0
+            }
+
             DispatchQueue.main.async {
                 #if os(iOS)
-                    Application<UIApplication>.shared?.isNetworkActivityIndicatorVisible = self.inProgress > 0
+                    Application<UIApplication>.shared?.isNetworkActivityIndicatorVisible = self.activities > 0
                 #endif
             }
         }
     }
 
+    private var activities = 0
+    private let lock = NSLock()
+
     /// Create an instance of `Activity` network.
-    public init(active: Int = 0) {
-        inProgress = active
+    public init(visible: Bool = false) {
+        self.visible = visible
     }
 }
 
@@ -36,12 +49,14 @@ extension Activity: Interceptor {
 
     /// Increments in progress request counter by one
     public func willExecute(request: Request) {
-        inProgress += 1
+        lock.lock(); defer { lock.unlock() }
+        visible = true
     }
 
     /// Decrease in progress request counter by one
     public func didExecute(request: Request) {
-        inProgress -= 1
+        lock.lock(); defer { lock.unlock() }
+        visible = false
     }
 
 }

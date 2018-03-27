@@ -66,10 +66,7 @@ public final class Queue {
     }
 
     func process(request: Request, response: HTTPResponse) {
-        queue[request.id].flatMap { request in
-            request.state = .finished
-            self.interceptors.forEach { $0.didExecute(request: request) }
-        }
+        interceptors.forEach { $0.didExecute(request: request) }
         queue[request.id]?.completion.forEach { closure in
             let result: ResponseHandler
 
@@ -100,9 +97,9 @@ public final class Queue {
 
     private func execute(_ request: Request) {
         if isStopped { return }
-        interceptors.forEach { $0.willExecute(request: request) }
         switch request.state {
         case .pending, .failed:
+            interceptors.forEach { $0.willExecute(request: request) }
             request.execute()
         case .finished:
             remove(id: request.id)
